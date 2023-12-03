@@ -1,0 +1,33 @@
+---
+import {getCollection, type CollectionEntry} from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../components/Main.astro";
+import H1 from "../../components/H1.astro";
+ export const getStaticPaths = async () => {
+    const topics = await getCollection('topics');
+    const paths = topics.map((topic) => ({
+
+        params: { slug: topic.slug   },
+        props:{topic}
+    }));
+    console.log("000000",typeof paths[0].props.topic.slug);
+    return paths;
+}
+type Props = {
+    topic : CollectionEntry<"topics">;
+  };
+const {topic} = Astro.props;
+console.log(topic)
+const {Content} = await topic.render()
+---
+
+<Layout title={topic.slug}>
+  <Main>
+    <H1 text={topic?.data.title}/>
+    <div class="prose prose-2xl overflow-visible relative mb-20">
+      
+      <Content/>
+    </div>
+    <a href=`/topic/${topic.data.nextLink}`>{topic.data.nextLink} >></a>
+  </Main>
+</Layout>
