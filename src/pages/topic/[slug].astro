@@ -24,10 +24,12 @@ const {Content} = await topic.render()
 <Layout title={topic.slug}>
   <Main>
     <H1 text={topic?.data.title}/>
-    <div class="prose prose-2xl overflow-visible relative mb-20">
-      
+    <div class="prose prose-xl overflow-visible relative mb-20 mt-6 mx-auto">
       <Content/>
     </div>
-    <a href=`/topic/${topic.data.nextLink}`>{topic.data.nextLink} >></a>
+    <div class="p-5 justify-between flex">
+      <a href=`/topic/${topic.data.previousLink}`> &lt;&lt; {topic.data.previousLink} </a>
+      <a href=`/topic/${topic.data.nextLink}`>{topic.data.nextLink} &gt;&gt;</a>
+    </div>
   </Main>
 </Layout>

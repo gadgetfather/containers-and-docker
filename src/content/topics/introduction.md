@@ -1,5 +1,4 @@
 ---
-title: Introduction
 nextLink: containers
 ---
 
