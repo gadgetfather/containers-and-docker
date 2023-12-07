@@ -10,9 +10,9 @@ Lets have look at some of the docker CLI commands
 ## pull / push
 
 ```
-docker pull
+docker pull bcbcarl/hollywood
 
-docker run
+docker run --rm -it bcbcarl/hollywood
 
 ```
 
@@ -33,7 +33,7 @@ It will dump out a lot of information about the container. Good check with whats
 As the name says it pauses / unpauses the processes in container.
 
 ```
-docker run --detach -it my-alpine
+docker run --detach -it bcbcarl/hollywood
 
 docker ps
 
@@ -50,9 +50,9 @@ docker ps
 This allows you to execute a command against existing/running container. whereas `docker run` tries to create a new container.
 
 ```
-docker run
+docker run --detach -it bcbcarl/hollywood
 docker ps
-docker exec       ps aux
+docker exec <ID or name > ps aux
 ```
 
 If you haven't seen `ps aux` before, it's a really useful way to see what's running on your computer.
