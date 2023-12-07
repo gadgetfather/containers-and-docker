@@ -1,3 +1,7 @@
+---
+nextLink: docker
+---
+
 # Chroot
 
 Chroot (short for "change root") is a Unix system call that allows a process to change its root directory to a new location in the file system. This new location becomes the root directory for the process and its children, effectively isolating them from the rest of the system.
