@@ -37,8 +37,36 @@ it will say that shell is not able to find the bash. That's because bash is prog
 2. `cp /bin/bash /bin/ls /my-new-root/bin/`
 3. `chroot /my-new-root bash`
 
-Still not working! Now the reason is that these commands rely on libraries to power them and we did not copy those. So lets also bring them.
+Still not working! Now the reason is that these commands rely on libraries to power them and we did not copy those. So lets also bring them. run `ldd /bin/bash. it will give output like this
 
 ```
+linux-vdso.so.1 (0x0000ffffbc101000)
+	libtinfo.so.5 => /lib/aarch64-linux-gnu/libtinfo.so.5 (0x0000ffffbbf82000)
+	libdl.so.2 => /lib/aarch64-linux-gnu/libdl.so.2 (0x0000ffffbbf6d000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffbbe14000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffbc0d5000)
+```
+
+These are the libraries that bash needs. Let's bring them in as well.
+
+1. Copy them to our environment
 
 ```
+mkdir /my-new-root/lib /my-new-root/lib64
+```
+
+2. We need copy all those who have path.
+
+```
+cp /lib/aarch64-linux-gnu/libtinfo.so.5 /lib/aarch64-linux-gnu/libdl.so.2 /lib/aarch64-linux-gnu/libc.so.6 /lib/ld-linux-aarch64.so.1 /my-new-root/lib
+
+cp /lib/aarch64-linux-gnu/libtinfo.so.5 /lib/aarch64-linux-gnu/libdl.so.2 /lib/aarch64-linux-gnu/libc.so.6 /lib/ld-linux-aarch64.so.1 /my-new-root/lib64
+```
+
+You can follow the same process to get the `ls` command working as well.
+
+Now lets try to get `chroot` again and you should see that we are in `Bash`. if you do `pwd` to see working directory it will show `/`. That's it we just made a container. At any time to exit you can do `exit` or CTRL + C.
+
+#### You can try for `cat` as well !
+
+Congrats! you just made your first container :D
