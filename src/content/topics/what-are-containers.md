@@ -1,5 +1,5 @@
 ---
-previousLink: introduction
+previousLink: /
 nextLink: chroot
 ---
 

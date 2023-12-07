@@ -5,34 +5,24 @@ import Main from '../components/Main.astro';
 
 <Layout >
 	<Main>
+		
 		<!-- create table of contents -->
-	
-		<ul>
-			<li><a href="/introduction">Introduction</a></li>
-			<li><a href="#what-is-a-component">What is a component?</a></li>
-			<li><a href="#why-components">Why components?</a></li>
-			<li><a href="#how-to-use-components">How to use components</a></li>
-			<li><a href="#how-to-create-components">How to create components</a></li>
-			<li><a href="#how-to-structure-components">How to structure components</a></li>
-			<li><a href="#how-to-style-components">How to style components</a></li>
-			<li><a href="#how-to-extend-components">How to extend components</a></li>
-			<li><a href="#how-to-use-props">How to use props</a></li>
-			<li><a href="#how-to-use-state">How to use state</a></li>
-			<li><a href="#how-to-use-context">How to use context</a></li>
-			<li><a href="#how-to-use-hooks">How to use hooks</a></li>
-			<li><a href="#how-to-use-refs">How to use refs</a></li>
-			<li><a href="#how-to-use-children">How to use children</a></li>
-			<li><a href="#how-to-use-fragments">How to use fragments</a></li>
-			<li><a href="#how-to-use-portals">How to use portals</a></li>
-			<li><a href="#how-to-use-error-boundaries">How to use error boundaries</a></li>
-			<li><a href="#how-to-use-suspense">How to use suspense</a></li>
-			<li><a href="#how-to-use-lazy">How to use lazy</a></li>
-			<li><a href="#how-to-use-memo">How to use memo</a></li>
-			<li><a href="#how-to-use-forward-ref">How to use forwardRef</a></li>
-			<li><a href="#how-to-use-imperative-handle">How to use imperativeHandle</a></li>
-			<li><a href="#how-to-use-debug-value">How to use debugValue</a></li>
-			<li><a href="#how-to-use-custom-hooks">How to use custom hooks</a></li>
-		</ul>
+	<div class = 'flex flex-col items-center justify-center h-full pt-24'>
+		<h1 class="mb-7 text-2xl">Table of content</h1>
+		<ol class="flex flex-col gap-3 text-lg border border-gray-500 p-16 list-decimal">
+			<li class="hover:underline"><a href="/topic/what-are-containers">What are containers?</a></li>
+			<li class="hover:underline"><a href="/topic/chroot">chroot</a></li>
+			<li class="hover:underline"><a href="/topic/docker">docker</a></li>
+			<li class="hover:underline"><a href="/topic/docker-images">docker images</a></li>
+			<li class="hover:underline"><a href="/topic/nodejs-docker">Node.js Docker</a></li>
+			<li class="hover:underline"><a href="/topic/tags">Tags</a></li>
+			<li class="hover:underline"><a href="/topic/docker-cli">docker CLI</a></li>
+			<li class="hover:underline"><a href="/topic/docker-file">dockerfile</a></li>
+			<li class="hover:underline"><a href="/topic/nodejs-app">Node.js app</a></li>
+			<li class="hover:underline"><a href="/topic/docker-compose">Docker compose and advance stuff</a></li>
+		</ol>
+		
+	</div>
 	</Main>
 </Layout>
 
